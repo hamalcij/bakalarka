@@ -19,6 +19,34 @@ Nevertheless, today's definition requires that these subassemblies also concieva
 function in isolation, and members of the same \emph{domain family} tend to possess an
 ancient evolutionary relationship and often a similar function~\cite{ponting2002natural}.
 
+Many bioinformatical tools are available online to perform domain identification within a
+protein sequence.
+The \emph{SCOP} database organises proteins of known three-dimensional structures according to their evolutionary and structural relationship~\cite{murzin1995scop}.
+It classifies non-redundant protein domains and defines them on two main levels of SCOP
+classification, family and superfamily.
+The designation of proteins in SCOP has been constructed mainly
+manually~\cite{andreeva2020scop}.
+
+Other tools tend to implement semimanual approaches, typically including a
+\emph{profile hidden Markov Model} (HMM), a powerful probabilistic method describing the
+sequence conservation in a family~\cite{krogh1994hidden, eddy1996hidden}.
+\emph{Pfam}~\cite{sonnhammer1997pfam} is such an example.
+Each protein family in Pfam database consists of a seed alignment forming the basis to
+build a HMM-based profile~\cite{el2019pfam} by engaging the HMMER
+software~\cite{finn2010pfam, finn2011hmmer}.
+Another protein structure classification database using HMMs to scan protein sequences
+against it is called \emph{CATH}~\cite{dawson2017cath}.
+CATH clusters proteins on four main levels, class (C), architecture (A), topology (T), and
+homologous superfamily (H)~\cite{orengo1997cath}.
+CATH, Pfam, and many more, are then integrated in a general resource for protein families,
+domains, and functional sites, called InterPro~\cite{finn2017interpro}.
+The authors aim to create a non-redundant characterization and the software package
+InterProScan provides an interface to functionally classify novel nucleotide or protein
+sequences~\cite{zdobnov2001interproscan}.
+By uniting member databases, InterPro exploits their individual strengths, thus
+significantly contributing in the troublesome effort of automatic
+annotation~\cite{apweiler2000interpro}.
+
 
 
 %Introduction should answer the following questions, ideally in this order:
