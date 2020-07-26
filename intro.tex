@@ -1,6 +1,8 @@
 \chapwithtoc{Introduction}
+\label{intro}
 
 \section*{Proteins and domains}
+\label{intro:prodoms}
 
   Proteins are amino acid chains, polypeptides, that serve a variety of functions within
   living cells, including structural support and movement, interactions with cell's
@@ -10,9 +12,9 @@
   information for correct folding is contained in the amino acid sequence itself.
 
   Different sequences fold into different three-dimensional conformations.
-  Certain local regions form secondary structures, such as $\alpha$ helices and $\beta$
-  sheets, and these locally ordered regions associate to form the whole protein, or in the
-  case of some larger proteins, to form folding units~\cite{levitt1975computer}.
+  Certain local regions form secondary structures, such as $\alpha$-helices and
+  $\beta$-sheets, and these locally ordered regions associate to form the whole protein,
+  or in the case of some larger proteins, to form folding units~\cite{levitt1975computer}.
   If the folding units would be stable, given that the polypeptide chain connecting them
   to the rest of the protein molecule were to be cleaved, these subassemblies can be
   referred to as \emph{domains}~\cite{goldberg1969tertiary, levitt1975computer}.
@@ -43,7 +45,7 @@
   and homologous superfamily (H)~\cite{orengo1997cath}.
   CATH, Pfam, and many more, are then integrated in a general resource for protein
   families, domains, and functional sites, called InterPro~\cite{finn2017interpro}.
-  The authors aim to create a non-redundant characterization and the software package
+  The authors aim to create a non-redundant characterization, and the software package
   InterProScan provides an interface to functionally classify novel nucleotide or protein
   sequences~\cite{zdobnov2001interproscan}.
   By uniting member databases, InterPro exploits their individual strengths, thus
@@ -52,11 +54,12 @@
 
   \citet{chothia1992one} predicted that there is a limited number of protein families
   nature uses in evolution.
-  Later, \citet{wolf2000estimating} estimated the sum to be between 4000 and 7000, and the
-  Pfam database seems to confirm this calculation, as it records 6,248 family entries in
-  the current release 32.0~\cite{el2019pfam}.
+  Later, \citet{wolf2000estimating} estimated the sum to be between 4,000 and 7,000, and
+  the Pfam database seems to confirm this calculation, as it records 6,248 family entries
+  in release 32.0~\cite{el2019pfam}.
 
 \section*{Protein kinase family}
+\label{intro:pkinase}
 
   An example of a protein family is the \emph{protein kinase family}, labeled as
   \texttt{PF00069} is the Pfam database.
@@ -130,9 +133,9 @@
   The recognition of peptide substrates in the active state is then mediated by the
   Ala-Pro-Glu (APE) motif located in subdomain VIII~\cite{hanks1995eukaryotic}.
 
-  Many other hydrophobic residues that do not form any primary sequence motif or any
-  particular secondary structure characterize active kinases, as they either stabilize the
-  whole domain, or regulate its overall
+  Many other hydrophobic residues that do not form any primary sequence motif, or any
+  particular secondary structure, characterize active kinases, as they either stabilize
+  the whole domain, or regulate its overall
   activity~\cite{kornev2006surface, kornev2010defining}.
   Especially one residue called the ``gatekeeper'' lying in the hinge region between the N
   and C lobes of the kinase domain has recently been of great interest in kinase inhibitor
@@ -140,8 +143,8 @@
   This gatekeeper residue guards a small hydrophobic cavity neighboring the ATP-binding
   site~\cite{noble2004protein} and it anchors kinase inhibitors bound in the ATP
   pocket~\cite{tong1997highly, azam2008activation}.
-  The particular type of residue is specific to each protein kinase domain and the size
-  and shape of the side chain determines the cavity's druggability.
+  The particular type of the gatekeeper residue is specific to each protein kinase domain
+  and the size and shape of the side chain determines the cavity's druggability.
   Moreover, drug design is strongly affected by the adjacent DFG motif's conformation as
   well~\cite{zuccotto2010through}.
 
@@ -156,6 +159,7 @@
   primarily also modulate other catalytic regions.
 
 \section*{Multi-domain proteins}
+\label{intro:multi}
 
   With a limited number of domain families
   present~\cite{chothia1992one, wolf2000estimating}, creating new functions may be somehow
@@ -165,8 +169,8 @@
   \citet{muller2002structural} estimated that 98\% of the domains in the human proteome
   are duplicates, duplication is in fact one of the main sources for creation of new
   genes~\cite{lynch2000evolutionary}.
-  Consequently, it is not surprising that the major molecular mechanism leading to multi
-  domain proteins and novel combination is non-homologous recombination, which is
+  Consequently, it is not surprising that the major molecular mechanism leading to
+  multi-domain proteins and novel combination is non-homologous recombination, which is
   sometimes referred to as ``domain shuffling''~\cite{vogel2004structure}.
 
   Domains are not merged aimlessly, when creating multi-domain proteins.
@@ -189,8 +193,9 @@
   these are large and versatile~\cite{apic2001domain, apic2001insight}.
 
 \subsection*{Non-domain regions}
+\label{intro:linker}
 
-  Domains within the same protein are connected by non-domain amino acid streches.
+  Domains within the same protein are connected by non-domain amino acid stretches.
   These can be long or short, often having a disordered structure, and considering the
   limited number of domains and architectures in nature, these \emph{linkers} introduce
   new possibilities for structural assemblies, and may regulate, or sometimes even take
@@ -199,17 +204,17 @@
   generally requires a certain amino acid sequence~\cite{gokhale2000role}.
   It has been shown by \citet{jakubec2018widespread} that residues in pairs of domains
   coevolve, and responses to mutations in residue pairs are also observed in non-domain
-  regions~\cite{smock2010interdomain}, thus providing a suitable environment for the whole
+  regions~\cite{smock2010interdomain}, thus ensuring a suitable environment for the whole
   molecule.
 
   Linkers often serve as rigid spacers between two domains.
   These molecular rulers are mostly $\alpha$-helical, and they prevent unfavorable
   interactions between the neighboring
   modules~\cite{george2002analysis, wriggers2005control}.
-  Mutations in such non-domain regions may not affect the function of a protein in any
-  way~\cite{bottema1991missense}, in different circumstances, however, alterations in
-  the linker region can have effect on stability, proteolytic resistance, or solubility of
-  single-chain proteins~\cite{robinson1998optimizing}.
+  Mutations in such non-domain regions are not expected to affect the function of a
+  protein in any way~\cite{bottema1991missense}, in different circumstances, however,
+  alterations in the linker region can have effect on stability, proteolytic resistance,
+  or solubility of single-chain proteins~\cite{robinson1998optimizing}.
   Especially, carefull selection of residues around prolines is of utmost importance.
   Proline is the most common residue in linkers.
   Its stiff nature helps prevent ominous contacts of linkers and domains, as it can not
@@ -219,6 +224,65 @@
   Other amino acids typical to linkers are glutamine, less specifically polar and charged
   amino acids, contrarily, residues with hydrophobic or aromatic side chains are more
   common in domains~\cite{brune2018proteome}.
+
+  Nevertheless, many linkers are also soft and intrinsically distorted.
+  The non-domain region of human immunoglobulin G1 exemplifies such flexible amino acid
+  sequence~\cite{colman1976structure}.
+  These often promote fundamental catalytic events in the overall function of proteins, as
+  observed in the packaging of the tomato bushy stunt virus
+  protein~\cite{winkler1977tomato}.
+  Since soft linkers connecting domains are not merely flexible, but also allosterically
+  regulated, it is no wonder that they are capable of facilitating protein folding and
+  conformational changes of the whole molecule, as the amino acid sequences of linkers,
+  and particularly of the residues in contact between linkers and adjoint domains,
+  encode conformational states, through which signals
+  travel~\cite{george2002analysis, ma2011dynamic}.
+  Prototypes of such signals may be phosphorylation of a distant residue, or, for example,
+  ATP binding.
+  Otherwise flexible linker in Src kinases clamps SH2 and SH3 domains upon C-terminal
+  tyrosine phosphorylation~\cite{young2001dynamic}, ATP binding on the other hand causes
+  the immobilization of neck linkers of kinesins, which subsequently extend towards the
+  plus end of a microtubule, thus giving kinesins their forward
+  drive~\cite{rice1999structural, rosenfeld2001atp, khalil2008kinesin}.
+
+  Both changes in linker length and composition can alter folding kinetics, function, and
+  stability of proteins~\cite{van1997linker, robinson1998optimizing}, as demonstated in
+  many studies.
+  A dramatic increase of pI from 5.86 to 9.81 was observed after deletion of 40
+  residues of a linker of mycobacteriophage D29 endolysin~\cite{pohane2015modulation},
+  conformations of protein domains in cellulosomes are primarily influenced by the length
+  of the linkers, as the stiffness of the linkers is negatively proportional to the linker
+  length~\cite{rozycki2017length}, and in the kinesins mentioned above, the effectivity of
+  kinesin runs is determined by the length of the neck linker~\cite{shastry2010neck}.
+  Domain functions are predominantly affected by short linkers, notably those that
+  are buried as well, contrarily, long linkers allow similar relative positions between
+  domains with swapped sequential order to be achieved, hence not having so much impact
+  on the overall protein activity~\cite{bashton2002geometry}.
+
+  Other authors present examples, where amino acid composition is more relevant for
+  the protein function compared to length.
+  \citet{klement2015effect} concluded this after exploring the functionality of cytotoxic
+  engineered antibody fragments.
+  In further research, \citet{ikebe1998hinge} demonstrated the importance of selected
+  residues in smooth muscle myosins with their actin translocating activity terminated
+  upon deletion or substitution of these amino acids, and conserved linker sequence is
+  crucial for the already discussed kinesins' microtubule-based motility as
+  well~\cite{case2000role, hariharan2009insights}.
+
+  Yet, it remains to be uncovered, \emph{how} the composition of non-domain regions
+  affects the function of multi-domain proteins.
+  For instance, even though not only the common structural elements of protein kinases are
+  involved in their regulation, but for many kinases also by
+  linkers~\cite{gogl2019disordered}, these non-core segments remarkably do not show any
+  sequence similarity, and differ overall throughout the protein kinase
+  family~\cite{taylor1994three}.
+  This thesis aims to expose the relationship between the linkers' composition and protein
+  activity and specificity.
+  This will be done by analyzing sequences of two-domain proteins containing exactly
+  one protein kinase domain, clustering the inter-domain stretches by computationally
+  acquired physicochemical properties, and embedding unique \emph{Gene Ontology}
+  (GO)~\cite{ashburner2000gene, gene2019gene} and \emph{Enzyme Commission number}
+  (EC)~\cite{webb1992enzyme, jeske2019brenda} terms into defined linker groups.
 
 %Introduction should answer the following questions, ideally in this order:
 %\begin{enumerate}
