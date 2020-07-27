@@ -1,0 +1,142 @@
+\chapwithtoc{Results}
+\label{res}
+
+\secwithtoc{Densities}
+\label{res:dens}
+
+	The density analysis gave interesting insights into the representation of
+	physicochemical properties within the studied dataset.
+	The linker length density peaks around 75 residues.
+	A small portion of extremly long inter-domain regions spanning 500 to 800 residues is
+	also present.
+	However, it is questionable, whether these ``linkers'' might not represent an yet
+	unrecognized domain, thus not being suitable for the definition of a
+	linker~\cite{milano2016structural}.
+
+	An untrivial outcome has been observed while studying the density of linkers'
+	iso-electric point, visualized in \cref{fig:iso-dens}.
+	Most non-domain regions in human two-domain protein kinases are either very acidic, or
+	on the other hand very basic
+	The region of neutral pH contains almost no proteins, forming an empty gap around pH 8.
+	This allows for dividing the studied protein kinases into two groups based on their
+	linker's acidity.
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=.9\linewidth]{img/iso_density.png}
+		\caption{The iso-electric point density of inter-domain regions from human two-domain
+		protein kinases in the studied dataset. Two groups of proteins are evident, one with
+		acidic linkers, one with basic linkers.}
+		\label{fig:iso-dens}
+	\end{figure}
+
+	Au contraire, neither the percentage of charged amino acids within the non-domain
+	regions, nor the linkers' GRAVY index, form distinct clusters.
+	Their densities show only single local maxima.
+	All linkers from the final dataset are hydrophilic, the percentage of charged residues
+	averages around 0.25, hence not giving any surprising results.
+
+\secwithtoc{UMAP clustering}
+\label{res:umap}
+
+	
+
+% \chapter{More complicated chapter}
+% \label{chap:math}
+%
+% After the reader gained sufficient knowledge to understand your problem in \cref{chap:refs}, you can jump to your own advanced material and conclusions.
+%
+% You will need definitions (see \cref{defn:x} below in \cref{sec:demo}), theorems (\cref{thm:y}), general mathematics, algorithms (\cref{alg:w}), and tables (\cref{tab:z})\todo{See documentation of package \texttt{booktabs} for hints on typesetting tables. As a main rule, \emph{never} draw a vertical line.}. \Cref{fig:f,fig:g} show how to make a nice figure. See \cref{fig:schema} for an example of TikZ-based diagram. Cross-referencing helps a lot to keep the necessary parts of the narrative close --- use references to the previous chapter with theory wherever it seems that the reader could have forgotten the required context.
+%
+% \section{Example with some mathematics}
+% \label{sec:demo}
+%
+% \begin{defn}[Triplet]\label{defn:x}
+% Given stuff $X$, $Y$ and $Z$, we will write a \emph{triplet} of the stuff as $(X,Y,Z)$.
+% \end{defn}
+%
+% \newcommand{\Col}{\textsc{Colour}}
+%
+% \begin{thm}[Car coloring]\label{thm:y}
+% All cars have the same color. More specifically, for any set of cars $C$, we have
+% $$(\forall c_1, c_2 \in C)\:\Col(c_1) = \Col(c_2).$$
+% \end{thm}
+%
+% \begin{proof}
+% Use induction on sets of cars $C$. The statement holds trivially for $|C|\leq1$. For larger $C$, select 2 overlapping subsets of $C$ smaller than $|C|$ (thus same-colored). Overlapping cars need to have the same color as the cars outside the overlap, thus also the whole $C$ is same-colored.\todo{This is plain wrong though.}
+% \end{proof}
+%
+% \begin{table}
+% \centering
+% {\footnotesize\sf
+% \begin{tabular}{llrl}
+% \toprule
+% Column A & Column 2 & Numbers & More \\
+% \midrule
+% Asd & QWERTY & 123123 & -- \\
+% Asd qsd 1sd & \textcolor{red}{BAD} & 234234234 & This line should be helpful. \\
+% Asd & \textcolor{blue}{INTERESTING} & 123123123 & -- \\
+% Asd qsd 1sd & \textcolor{violet!50}{PLAIN WEIRD} & 234234234 & -- \\
+% Asd & QWERTY & 123123 & -- \\
+% \addlinespace % a nice non-intrusive separator of data groups (or final table sums)
+% Asd qsd 1sd & \textcolor{green!80!black}{GOOD} & 234234299 & -- \\
+% Asd & NUMBER & \textbf{123123} & -- \\
+% Asd qsd 1sd & DIFFERENT & 234234234 & (no data) \\
+% \bottomrule
+% \end{tabular}}
+% \caption{An example table. Table caption should clearly explain how to interpret the data in the table. Use some visual guide, such as boldface or color coding, to highlight the most important results (e.g., comparison winners).}
+% \label{tab:z}
+% \end{table}
+%
+% \begin{figure}
+% \centering
+% \includegraphics[width=.6\linewidth]{img/ukazka-obr02.pdf}
+% \caption{A figure with a plot, not entirely related to anything. If you copy the figures from anywhere, always refer to the original author, ideally by citation (if possible). In particular, this picture --- and many others, also a lot of surrounding code --- was taken from the example bachelor thesis of MFF, originally created by Martin Mareš and others.}
+% \label{fig:g}
+% \end{figure}
+%
+% \begin{figure}
+% \centering
+% \tikzstyle{box}=[rectangle,draw,rounded corners=0.5ex,fill=green!10]
+% \begin{tikzpicture}[thick,font=\sf\scriptsize]
+% \node[box,rotate=45] (a) {A test.};
+% \node[] (b) at (4,0) {Node with no border!};
+% \node[circle,draw,dashed,fill=yellow!20, text width=6em, align=center] (c) at (0,4) {Ugly yellow node.\\Is this the Sun?};
+% \node[box, right=1cm of c] (d) {Math: $X=\sqrt{\frac{y}{z}}$};
+% \draw[->](a) to (b);
+% \draw[->](a) to[bend left=30] node[midway,sloped,anchor=north] {flow flows} (c);
+% \draw[->>>,dotted](b) to[bend right=30] (d);
+% \draw[ultra thick](c) to (d);
+%
+% \end{tikzpicture}
+% \caption{An example diagram typeset with TikZ.}
+% \label{fig:schema}
+% \end{figure}
+%
+% \begin{algorithm}
+% \begin{algorithmic}
+% \Function{ExecuteWithHighProbability}{$A$}
+% 	\State $r \gets$ a random number between $0$ and $1$
+% 	\State $\varepsilon \gets 0.0000000000000000000000000000000000000042$
+% 	\If{$r\geq\varepsilon$}
+% 		\State execute $A$ \Comment{We discard the return value}
+% 	\Else
+% 		\State print: \texttt{Not today, sorry.}
+% 	\EndIf
+% \EndFunction
+% \end{algorithmic}
+% \caption{Algorithm that executes an action with high probability. Do not care about formal semantics in the pseudocode --- semicolons, types, correct function call parameters and similar nonsense from `realistic' languages can be safely omitted. Instead make sure that the intuition behind (and perhaps some hints about its correctness or various corner cases) can be seen as easily as possible.}
+% \label{alg:w}
+% \end{algorithm}
+%
+% \section{Extra typesetting hints}
+%
+% Do not overuse text formatting for highlighting various more or less parts of your sentences; if an idea cannot be communicated without formatting, the sentence probably needs rewriting anyway.
+%
+% Most importantly, do \underline{not} overuse bold text, which is designed to literally \textbf{shine from the page} to be the first thing that catches the eye of the reader. More precisely, use bold text only for `navigation' elements that need to be seen first, such as headings, list item names, and figure numbers.
+%
+% Use underline only in dire necessity, such as in the previous paragraph where it was inevitable to ensure that the reader remembers to never typeset boldface text manually again.
+%
+% Use \emph{emphasis} to highlight the first occurrences of important terms that the reader should notice. The feeling the emphasis produces is, roughly, ``Oh my --- what a nicely slanted word! Surely I expect it be important for the rest of the thesis!''
+%
+% Finally, never draw a vertical line (e.g., in a table or around figures), ever. Vertical lines outside of the figures are ugly.

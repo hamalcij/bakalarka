@@ -2,8 +2,28 @@
 % use this for typesetting a chapter without a number, e.g. intro and outro
 \def\chapwithtoc#1{
 \chapter*{#1}
-\addcontentsline{toc}{chapter}{#1}
+\addcontentsline{toc}{chapter}{\protect\numberline{}#1}
 }
+
+\def\secwithtoc#1{
+\section*{#1}
+\addcontentsline{toc}{section}{\protect\numberline{}#1}
+}
+
+\def\subsecwithtoc#1{
+\subsection*{#1}
+\addcontentsline{toc}{subsection}{\protect\numberline{}#1}
+}
+
+% \def\secwithtoc#1{
+% \section*{#1}
+% \addcontentsline{toc}{section}{\protect\numberline{}#1}
+% }
+%
+% \def\subsecwithtoc#1{
+% \subsection*{#1}
+% \addcontentsline{toc}{subsection}{\protect\numberline{}#1}
+% }
 
 % If there is a line/figure overflowing into page margin, this will make the
 % problem evident by drawing a thick black line at the overflowing spot. You

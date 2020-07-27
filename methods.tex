@@ -32,10 +32,10 @@ multi-domain protein kinases, yielding the final dataset containing 117 molecule
 Two sets of physicochemical properties of the domain and inter-domain regions of the final
 dataset were acquired.
 The first set, which was in the spotlight of this study, consists of 8-mers composed of
-linker's length, linker's iso-electric point, linker's percentage of charged amino acids,
-linker's \emph{GRAVY index}~\cite{kyte1982simple}, kinase domain's iso-electric point,
-kinase domain's GRAVY index, other domain's iso-electric point, and other domain's GRAVY
-index.
+the logarithm of linker's length, linker's iso-electric point, linker's percentage of
+charged amino acids, linker's \emph{GRAVY index}~\cite{kyte1982simple}, kinase domain's
+iso-electric point, kinase domain's GRAVY index, other domain's iso-electric point, and
+other domain's GRAVY index.
 These values were calculated with the ExPASy's ProtParam tool~\cite{gasteiger2005protein},
 and their densities and correlation matrix across the whole dataset were computed.
 In the second set, each linker is described with 553 physicochemical and
@@ -43,8 +43,8 @@ biochemical properties of amino acids from the AAindex database, version
 9.2~\cite{nakai1988cluster, tomii1996analysis, kawashima1999aaindex, kawashima2000aaindex,
 kawashima2007aaindex}.
 Dimension reduction technique called \emph{UMAP}~\cite{mcinnes2018umap} was then applied
-on various subsets of both sets, thus producing clusters of proteins having similar
-physicochemical attributes.
+on various normalized subsets of both sets, thus producing clusters of proteins having
+similar physicochemical attributes.
 
 EC and GO terms present in the \texttt{uniprot\_reference\_proteomes.dat} file were
 parsed.

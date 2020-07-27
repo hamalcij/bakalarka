@@ -1,7 +1,8 @@
 % Metadata to be stored in PDF, see documentation of the pdfx package for more details.
 
-\Author{Name Surname}
-\Title{Thesis title}
+\Author{Jan Hamalčík}
+\Title{The influence of non-domain regions' composition on the activity of multi-domain protein kinases}
 \Keywords{keywords\sep more such\sep yet another}
+\Keywords{protein domains\sep multi-domain proteins\sep protein function\sep non-domain regions\sep protein kinases}
 \Subject{Abstract of thesis}
 \Publisher{Charles University}
