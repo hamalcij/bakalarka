@@ -1,45 +1,118 @@
 \chapwithtoc{Results}
 \label{res}
 
-\secwithtoc{Densities}
-\label{res:dens}
+\secwithtoc{First set of physicochemical attributes}
+\label{res:first}
 
-	The density analysis gave interesting insights into the representation of
-	physicochemical properties within the studied dataset.
-	The linker length density peaks around 75 residues.
-	A small portion of extremly long inter-domain regions spanning 500 to 800 residues is
-	also present.
-	However, it is questionable, whether these ``linkers'' might not represent an yet
-	unrecognized domain, thus not being suitable for the definition of a
-	linker~\cite{milano2016structural}.
+	In this section, results for the first set of physicochemical properties described
+	above will be presented.
+	These include the length, iso-electric point, GRAVY index, and percentage of charged
+	amino acids within the non-domain regions of human heterodimeric protein kinases.
 
-	An untrivial outcome has been observed while studying the density of linkers'
-	iso-electric point, visualized in \cref{fig:iso-dens}.
-	Most non-domain regions in human two-domain protein kinases are either very acidic, or
-	on the other hand very basic
-	The region of neutral pH contains almost no proteins, forming an empty gap around pH 8.
-	This allows for dividing the studied protein kinases into two groups based on their
-	linker's acidity.
+	\subsecwithtoc{Densities}
+	\label{res:first:dens}
 
-	\begin{figure}
-		\centering
-		\includegraphics[width=.9\linewidth]{img/iso_density.png}
-		\caption{The iso-electric point density of inter-domain regions from human two-domain
-		protein kinases in the studied dataset. Two groups of proteins are evident, one with
-		acidic linkers, one with basic linkers.}
-		\label{fig:iso-dens}
-	\end{figure}
+		The density analysis gave interesting insights into the representation of
+		physicochemical properties within the studied dataset.
+		The linker length density peaks around 75 residues.
+		A small portion of extremly long inter-domain regions spanning 500 to 800 residues is
+		also present.
+		However, it is questionable, whether these ``linkers'' might not represent an yet
+		unrecognized domain, thus not being suitable for the definition of a
+		linker~\cite{milano2016structural}.
 
-	Au contraire, neither the percentage of charged amino acids within the non-domain
-	regions, nor the linkers' GRAVY index, form distinct clusters.
-	Their densities show only single local maxima.
-	All linkers from the final dataset are hydrophilic, the percentage of charged residues
-	averages around 0.25, hence not giving any surprising results.
+		An untrivial outcome has been observed while studying the density of linkers'
+		iso-electric point, visualized in \cref{fig:iso-dens}.
+		Most non-domain regions in human two-domain protein kinases are either very acidic, or
+		on the other hand very basic
+		The region of neutral pH contains almost no proteins, forming an empty gap around pH
+		8.
+		This allows for dividing the studied protein kinases into two groups based on their
+		linker's acidity.
 
-\secwithtoc{UMAP clustering}
-\label{res:umap}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\linewidth]{img/iso_density.png}
+			\caption{The iso-electric point density of inter-domain regions from human
+			two-domain protein kinases in the studied dataset. Two groups of proteins are
+			evident, one with acidic linkers, one with basic linkers.}
+			\label{fig:iso-dens}
+		\end{figure}
 
-	
+		Au contraire, neither the percentage of charged amino acids within the non-domain
+		regions, nor the linkers' GRAVY index, form distinct clusters.
+		Their densities show only single local maxima.
+		All linkers from the final dataset are hydrophilic, the percentage of charged residues
+		averages around 0.25, hence not giving any surprising results.
+
+	\subsecwithtoc{UMAP clustering}
+	\label{res:first:umap}
+
+		Using the first set of linkers' physicochemical attributes, the UMAP dimensionality
+		reduction clustering defines three linker types.
+		Throughout this thesis, the linker types will be reffered to based on the clusters'
+		positioning in \cref{fig:umap}: ``L-linkers'' for the lower left cluster,
+		``M-linkers'' for the middle cluster, and ``R-linkers'' for the right cluster.
+		L-linkers are best characterized by their extreme length of more than 600 residues,
+		R-linkers by their extremely basic iso-electric point, and M-linkers by their
+		extremely acidic iso-electric point, as well as by their GRAVY index being negatively
+		proportional to their percentage of charged amino acids.
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=\linewidth]{img/linker_umap.png}
+			\caption{UMAP dimensionality reduction of the normalized linker attributes:
+			logarithm of linker's length, iso-electric point, GRAVY index, and percentage of
+			charged amino acids within the non-domain regions of human two-domain protein
+			kinases. The values of the four physicochemical properties are embedded into the
+			same UMAP clustering, each subfigure corresponding to one attribute.}
+			\label{fig:umap}
+		\end{figure}
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.9\linewidth]{img/linker_umap_arch.png}
+			\caption{Architectures of the studied molecules embedded into the UMAP clustering
+			of four physicochemical attributes of non-domain regions.}
+			\label{fig:umap_arch}
+		\end{figure}
+
+		By embedding the architectures of the proteins from the studied dataset into the UMAP
+		clustering, it is visible, that many architectures feature more than one linker type,
+		as seen in \cref{fig:umap_arch}.
+		Especially the architecture \texttt{PF00069\_PF00780} stands out, being endowed with
+		all three linker classes.
+		On the other hands, most architectures equipped with linkers from only one category
+		are represented by a very narrow subset of proteins from the set of human two-domain
+		protein kinases.
+
+	\subsecwithtoc{Gene Ontology terms}
+	\label{res:first:go}
+
+		All considered proteins had at least two GO terms, one of them always being
+		\texttt{GO:0005524; F:ATP binding}.
+		The second most common was \texttt{GO:0004674; F:protein serine/threonine kinase
+		activity}, and the third most frequent GO term was \texttt{GO:0004672; F:protein
+		kinase activity}.
+
+		However, the search for unique GO terms within both UMAP and iso-electric point
+		clusterings of the non-domain regions on different GO hierarchical levels gave no
+		satisfactory results, albeit discovering many GO terms exclusive for each examined
+		linker group.
+		These terms were namely terribly underrepresented in proteins found within the
+		clusters, and no unique vocable was found spanning any whole inter-domain region
+		bundle.
+
+		There were only two GO terms standing out, regarding their proportion.
+		\texttt{GO:0000287; F:magnesium ion binding} found on hierarchy level 6 is exclusive
+		to the acidic linker group, as well as to the M-linkers.
+		It was encountered in 12 proteins, covering 8 different architectures, including those
+		having the \texttt{PF00069} domain on the N-terminus, as well as those carrying the
+		protein kinase domain on the C-terminus.
+		The second vocable is \texttt{GO:0005516; F:calmodulin binding} appearing on hierarchy
+		level 4, being limited to the basic linker group, likewise to the R-linkers.
+		Regrettably, all 10 proteins accredited with this GO term possess the same
+		architecture.
 
 % \chapter{More complicated chapter}
 % \label{chap:math}

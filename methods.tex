@@ -29,13 +29,11 @@ this thesis.
 Heterodimers were then elected from the emerging 244 cytosolic and nuclear human
 multi-domain protein kinases, yielding the final dataset containing 117 molecules.
 
-Two sets of physicochemical properties of the domain and inter-domain regions of the final
+Two sets of physicochemical properties of the inter-domain regions of the final
 dataset were acquired.
-The first set, which was in the spotlight of this study, consists of 8-mers composed of
+The first set, which was in the spotlight of this study, consists of 4-mers composed of
 the logarithm of linker's length, linker's iso-electric point, linker's percentage of
-charged amino acids, linker's \emph{GRAVY index}~\cite{kyte1982simple}, kinase domain's
-iso-electric point, kinase domain's GRAVY index, other domain's iso-electric point, and
-other domain's GRAVY index.
+charged amino acids, and linker's \emph{GRAVY index}~\cite{kyte1982simple}.
 These values were calculated with the ExPASy's ProtParam tool~\cite{gasteiger2005protein},
 and their densities and correlation matrix across the whole dataset were computed.
 In the second set, each linker is described with 553 physicochemical and
@@ -51,10 +49,11 @@ parsed.
 The latter is a weakly hierarchical vocabulary~\cite{ashburner2000gene}, and the hierarchy
 level of GO terms in the \texttt{uniprot\_reference\_proteomes.dat} file is not
 standardized.
-Therefore, for each protein, parents of its terms were recursively obtained from the
-\texttt{go-basic.obo}
+Therefore, for each protein, parents of its terms were recursively obtained and merged
+from the \texttt{go-basic.obo}
 file\footnote{\url{http://current.geneontology.org/ontology/go-basic.obo}}, release
 2020-06-01, thus enabling cluster analysis on different GO levels.
+GO terms labeled as obsolete were excluded.
 EC and GO terms were then embedded into the UMAP dimensionality reduction clustering, and
 presence of unique terms within clusters was examined.
 The same process was executed on density clusters as well.
