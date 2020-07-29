@@ -114,6 +114,54 @@
 		Regrettably, all 10 proteins accredited with this GO term possess the same
 		architecture.
 
+	\subsecwithtoc{Enzyme Commission numbers}
+	\label{res:first:ec}
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=\linewidth]{img/iso_density_ec.png}
+			\caption{Occurences of EC numbers in human two-domain protein kinases. The $x$-axis
+			represents the iso-electric point of the molecules' linkers.}
+			\label{fig:ec}
+		\end{figure}
+
+		Out of the 117 human heterodimeric protein kinases, 70 molecules have an EC number
+		assigned in the \texttt{uniprot\_reference\_proteomes.dat} file.
+		For the remaining 47, the Enzyme Commission will be reffered to as
+		``\texttt{UNKNOWN}''.
+		3 kinases had more than one EC number specified, some of these extra terms are
+		outside of the \texttt{2.7.11 protein-serine/threonine kinases} group.
+		Only 14 molecules had, however, EC classification other than \texttt{2.7.11.-},
+		\texttt{2.7.11.1 non-specific serine/threonine protein kinase}, or \texttt{UNKNOWN}.
+
+		\Cref{fig:ec} shows the distribution of the linkers' iso-electric point for each EC
+		number.
+		All 5 specialized EC terms are vastly underrepresented within the studied dataset, yet
+		for example the \texttt{2.7.11.25 mitogen-activated protein kinase kinase kinases}
+		are even present in both acidic and basic linker cluster.
+		Contrarily, basic inter-domain regions seem to be specific to both \texttt{2.7.11.16
+		G-protein coupled receptor kinases} and
+		\texttt{2.7.11.17 Ca\textsuperscript{2+}/calmodulin-dependent protein kinases},
+		nevertheless, they are not to be found in more than one architecture.
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\linewidth]{img/linker_umap_ec.png}
+			\caption{Embedding of the EC numbers into the UMAP dimensionality reduction
+			clustering.}
+			\label{fig:umap_ec}
+		\end{figure}
+
+		The inadequate representation of the EC numbers in the final dataset was also the
+		reason behind the unsatisfactory results of embedding the terms into the UMAP
+		dimensionality reduction clustering.
+		On one hand, the numbers \texttt{2.7.11.14}, \texttt{2.7.11.16}, and
+		\texttt{2.7.11.17} are specific to one of the three defined linker groups, on the
+		other hand, they are not to be found in more than one architecture, as already
+		mentioned above.
+		In conclusion, the first set of physicochemical attributes did not provide any
+		interesting results.
+
 % \chapter{More complicated chapter}
 % \label{chap:math}
 %
