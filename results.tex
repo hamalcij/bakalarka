@@ -24,7 +24,7 @@
 		An untrivial outcome has been observed while studying the density of linkers'
 		iso-electric point, visualized in \cref{fig:iso-dens}.
 		Most non-domain regions in human two-domain protein kinases are either very acidic, or
-		on the other hand very basic
+		on the other hand, very basic
 		The region of neutral pH contains almost no proteins, forming an empty gap around pH
 		8.
 		This allows for dividing the studied protein kinases into two groups based on their
@@ -127,7 +127,7 @@
 
 		Out of the 117 human heterodimeric protein kinases, 70 molecules have an EC number
 		assigned in the \texttt{uniprot\_reference\_proteomes.dat} file.
-		For the remaining 47, the Enzyme Commission will be reffered to as
+		For the remaining 47, the Enzyme Commission term will be reffered to as
 		``\texttt{UNKNOWN}''.
 		3 kinases had more than one EC number specified, some of these extra terms are
 		outside of the \texttt{2.7.11 protein-serine/threonine kinases} group.
@@ -161,6 +161,34 @@
 		mentioned above.
 		In conclusion, the first set of physicochemical attributes did not provide any
 		interesting results.
+
+\secwithtoc{Second set of physicochemical attributes}
+\label{res:second}
+
+	The UMAP dimensionality reduction of the 553 physicochemical data from the AAindex
+	database did not reflect the clustering of 4 physicochemical attributes described above
+	at all.
+	As seen in \cref{fig:aa_umap}, one small cluster of non-domain regions from human
+	heterodimeric protein kinases emerges on the right side of the visualization, however,
+	it contains only proteins with the same architecture \texttt{PF00069\_PF12202}.
+	In the large cloud on the left side, generally, molecules with the same architecture
+	create local bundles, and they only seldom mix with proteins with other
+	architectures.
+	Due to the lack of clearly distinguishable clusters, no GO or EC embedding was
+	performed.
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.9\linewidth]{img/aa_umap_arch.png}
+		\caption{Architectures of the heterodimeric protein kinases embedded into the UMAP
+		dimensionality reduction of 553 physicochemical properties from the AAindex database.}
+		\label{fig:aa_umap}
+	\end{figure}
+
+	In conclusion, no obvious influence of non-domain regions' composition on the activity
+	of human heterodimeric protein kinases was observed, as no evident clustering of the
+	linkers' physicochemical properties segregating frequent GO terms or EC numbers was
+	achieved.
 
 % \chapter{More complicated chapter}
 % \label{chap:math}
