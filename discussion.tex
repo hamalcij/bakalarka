@@ -2,75 +2,85 @@
 \label{discussion}
 
 The length and amino acid composition of non-domain regions can be crucial for the
-regulation of multi-domain proteins' activity, including protein
-kinases~\cite{gogl2019disordered, vigil2004conformational}. % PRIDEJ DALSI ZDROJE
+regulation of multi-domain proteins' activity, including
+PKs~\cite{gogl2019disordered, vigil2004conformational}.
 However, to our knowledge, the influence of the linkers' composition on the overall
 protein function has not been described \emph{in general} yet.
 This thesis tried to address this issue by selecting a dataset of evolutionarily related
-multi-domain proteins containing a protein kinase domain, clustering these molecules
-based on the physicochemical attributes of their non-domain regions, and by identifying
-Gene Ontology terms and Enzyme Commission numbers specific to the detected clusters of
-proteins with various architectures.
+multi-domain proteins containing a PK domain, clustering these molecules based on the
+physicochemical attributes of their inter-domain regions, and by identifying GO terms and
+EC numbers specific to the detected clusters of proteins with various architectures.
 
 Even though it was possible to divide proteins from the studied dataset into three groups
-based on the clusters visible from the UMAP dimensionality reduction of the 4-dimensional
-vectors of the linkers' normalized physicochemical characters, no frequent functional
-annotation term could characterize the defined clusters.
+based on the clusters visible in the UMAP representation of the 4-dimensional space of
+the linkers' normalized physicochemical characters, no frequent functional annotation
+terms could characterize the defined clusters.
 There may be several reasons for the lack of success of the designed method.
-For example, there may really not be any overall influence of the non-domain regions'
-composition on the function of two-domain protein kinases.
+For example, there may really not be any overall influence of the inter-domain regions'
+composition on the function of two-domain PKs.
 However, based on the literature search presented above, this proposition seems rather
-impobable~\cite{winkler1977tomato, van1997linker, ikebe1998hinge, robinson1998optimizing,
+improbable~\cite{winkler1977tomato, van1997linker, ikebe1998hinge, robinson1998optimizing,
 rice1999structural, gokhale2000role, case2000role, pufall2002autoinhibitory,
 khalil2008kinesin, hariharan2009insights, smock2010interdomain, liu2010molecular,
 shastry2010neck, ma2011dynamic, cyrus2011impact, kalodimos2011nmr, pohane2015modulation,
 klement2015effect, rozycki2017length, jakubec2018widespread, gogl2019disordered}.
 
 The narrow dataset may be a significant problem.
-In a sample of large size, more information is available, on the other hand, false
+In a sample of large size, more information is available; on the other hand, false
 presumptions may be concluded from a small sample generating the
 observations~\cite{tanaka1987big, hua2005optimal}.
-In the studied dataset, 32 different architectures are present within the 117 molecules.
+In the studied dataset, 32 different architectures were present within the 117 molecules.
 Proteins with the same architecture are frequently related, both evolutionarily and
 functionally~\cite{vogel2004structure, hegyi2001annotation, bashton2002geometry}, and the
-linkers may introduce new structural features~\cite{papaleo2016role}, thus enhancing
+linkers may introduce new structural features~\cite{papaleo2016role}, thus enhancing the
 functionality.
-With 3.65625 proteins per architecture on average, no feasible resolution can be
-concluded on how the composition of the linkers affects the behavior of these molecules.
+With 3.65625 proteins per architecture on average, no robust conclusion can be made on how
+the composition of the linkers affects the behavior of these molecules.
 
-Furthermore, both function annotation services, Gene Ontology and Enzyme Commission, have
-drawbacks regarding their completeness and homogeneity.
-For instance, \citet{gaudet2017gene} claim, that the GO is biased, and unevenly
-incomplete.
-The Gene Ontology database is a reflection of primary literature~\cite{gene2004gene},
-therefore less studied areas are inadequately represented in the GO.
-On the other hand, more comprehensively covered parts of the GO are not flawless as well,
-as they can provide contradictory information, which can be caused for example by
+Furthermore, both functional annotation services, GO and EC, have drawbacks regarding
+their completeness and homogeneity.
+For instance, \citet{gaudet2017gene} claim that the GO is biased and unevenly incomplete.
+The GO database is a reflection of primary literature~\cite{gene2004gene}, therefore, less
+studied areas are inadequately represented in the GO.
+On the other hand, more comprehensively covered parts of the GO are not flawless either,
+as they can provide contradictory information which can be caused, for example, by
 differences in experimental conditions of comparable
-research:~\cite{hass2004response, mason2005multiple}.
+research~\cite{hass2004response, mason2005multiple}.
 
-Within the studied 117 human two-domain protein kinases, total 1,982 GO annotations were
-fetched from the \texttt{uniprot\_reference\_proteomes.dat} file, peaking at 69 terms
-assigned to a single protein, namely the \texttt{AAPK1\_HUMAN} kinase.
-These include even GO terms from the same hierarchy.
+Within the studied 117 human two-domain PKs, a total of 1,982 GO annotations were fetched
+from the UPR.dat file, peaking at 69 terms assigned to a single protein, namely the
+\texttt{AAPK1\_HUMAN} PK.
+These include even the GO terms from the same hierarchy.
 For example, it is possible to reach \texttt{GO:0008610; lipid biosynthetic process} by
 recursively applying the transitive relationship ``\texttt{is\_a}'' on
 \texttt{GO:0045542; positive regulation of cholesterol biosynthetic process}, which are
 both explicitly mentioned in the \texttt{uniprot\_reference\_proteomes.dat} file.
 Furthermore, the same protein is classified as \texttt{2.7.11.1 non-specific
-serine/threonine protein kinase}, however, at the same time, has the specific EC number
-\texttt{2.7.11.26}, \texttt{2.7.11.27}, and \texttt{2.7.11.31} assigned to it.
+serine/threonine protein kinase}; however, at the same time, has the specific EC numbers
+\texttt{2.7.11.26}, \texttt{2.7.11.27}, and \texttt{2.7.11.31} assigned to it as well.
 
-To be assigned an Enzyme Commission number, there must be a direct experimental evidence
-that the proposed enzyme actually catalyses the claimed reaction~\cite{mcdonald2014fifty}.
-60 protein from the studied dataset were described as \texttt{2.7.11.1 non-specific
-serine/threonine protein kinase}, meaning that these kinases are either non-specific,
+To be assigned an EC number, there must be a direct experimental evidence that the
+proposed enzyme actually catalyses the claimed reaction~\cite{mcdonald2014fifty}.
+60 proteins from the studied dataset were described as \texttt{2.7.11.1 non-specific
+serine/threonine protein kinase}, meaning that these PKs are either non-specific,
 or their specificity has not been analyzed to
 date\footnote{\url{https://www.brenda-enzymes.org/enzyme.php?ecno=2.7.11.1}}.
-Neither of these possibilities comprise good news for the goal of this thesis.
+Neither of these possibilities are favorable regarding the goal of this thesis.
 
-The strict nature of EC, as well as the excessiveness of the GO combined with insufficient
-amount of research could be overcome by measuring similarities of the GO
-terms~\cite{li2010effectively, zhao2018gogo} within the protein clusters, instead of
+The strict nature of the EC, as well as the excessiveness of the GO combined with
+insufficient amount of research could be overcome by measuring similarities of the GO
+terms~\cite{li2010effectively, zhao2018gogo} within the protein clusters instead of
 enforcing their absolute exclusion.
-Nevertheless, a larger dataset is required to produce a significant outcome.
+However, throughout this thesis, only rough and averaged characteristics of the whole
+linkers were considered.
+In reality, only a couple of particular residues may have influence on the protein
+activity, the rest of them may be unimportant.
+The herein proposed method is not capable of resolving such residues.
+Furthermore, the shape of the 2D representation generated by UMAP is highly dependent on
+the choice of several
+hyperparameters\footnote{\url{https://umap-learn.readthedocs.io/en/latest/parameters.html}}.
+Besides, UMAP is a stochastic algorithm, and an exact reproduction of the results is only
+possible by fixing a random seed
+state\footnote{\url{https://umap-learn.readthedocs.io/en/latest/reproducibility.html}}.
+The observed linker types are therefore determined by the UMAP parametrization.
+Nevertheless, a larger dataset is still required to produce a significant outcome.

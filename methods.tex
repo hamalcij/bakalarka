@@ -1,62 +1,70 @@
 \chapwithtoc{Methods}
 \label{methods}
 
-Protein sequences and Pfam domain alignments were obtained from The European
+Protein sequences and MSAs of Pfam domain sequences were obtained from The European
 Bioinformatics Institute's
 FTP\footnote{\url{ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/}}.
-Archived files \texttt{Pfam-A.full} and \texttt{uniprot\_reference\_proteomes.dat}
-corresponding to Pfam's release 32.0 were downloaded.
+The archived files \texttt{Pfam-A.full} and \texttt{uniprot\_reference\_proteomes.dat}
+(UPR.dat) corresponding to Pfam's release 32.0 were downloaded; the MSAs consist of
+sequences from the UniProt reference proteomes version 2018\_04.
 Protein family annotation software
 pfamannot\footnote{\url{https://github.com/hamalcij/pfamannot}} has then been implemented
-in C++17 to parse these files, and to extract architectures of all proteins containing at
+in C++17 to parse these files and to extract architectures of all proteins containing at
 least one \texttt{PF00069} domain, starting and ending positions of all domains present
-within such proteins, primary sequence of the whole molecule, and organisms, from which
-they originate.
-Total 330,302 such proteins were identified, of which 127,697 were multi-domain proteins.
+within such proteins, primary sequences of the whole molecules, and the organisms from
+which they originate.
+A total of 330,302 such proteins were identified, of which 127,697 were multi-domain
+proteins.
 
-To reduce evolutionary noise, only human multi-domain protein kinases were selected for
+To reduce the evolutionary noise, only multi-domain PKs from humans were selected for
 further analysis.
+A total of 542 multi-domain PKs were identified.
 The eukaryotic protein subcellular location predictor
-DeepLoc-1.0~\cite{almagro2017deeploc} was applied to 542 human multi-domain protein
-kinases with sequences spanning at most 6,000 residues due to DeepLoc's length limitation,
-and molecules with their subcellular location predicted to cytoplasm or nucleus were
-chosen, as the amino acid composition, thus also the physicochemical properties of
-membrane proteins, differ significantly from their soluble
-counterparts~\cite{capaldi1972low, von1988topogenic, tusnady1998principles}.
-Besides, membrane proteins have their conformational degrees of freedom reduced due to
+DeepLoc-1.0~\cite{almagro2017deeploc} was then applied to these
+proteins\footnote{Sequences spanning more than 6,000 residues were discarded due to
+DeepLoc's length limitation.}, and the molecules with their subcellular location
+predicted to be the cytoplasm or nucleus were chosen, as the amino acid composition, thus
+also the physicochemical properties of membrane proteins differ significantly from their
+soluble counterparts~\cite{capaldi1972low, von1988topogenic, tusnady1998principles}.
+In addition, membrane proteins have their conformational degrees of freedom reduced due to
 their placement in the lipid bilayer, and are therefore not suitable for the purpose of
 this thesis.
-Two-domain proteins with a single protein kinase domain were then elected from the
-emerging 244 cytosolic and nuclear human multi-domain protein kinases, yielding the final
-dataset containing 117 molecules.
+Two-domain proteins with a single PK domain were then selected from the emerging 244
+cytosolic or nuclear human multi-domain PKs, yielding the final dataset containing a
+total of 117 protein molecules.
 
-Two sets of physicochemical properties of the inter-domain regions of the final
-dataset were acquired.
-The first set, which was in the spotlight of this study, consists of 4-mers composed of
-the logarithm of linker's length, linker's iso-electric point, linker's percentage of
-charged amino acids, and linker's \emph{GRAVY index}~\cite{kyte1982simple}.
+Two sets of physicochemical properties were then acquired for the inter-domain regions in
+the final dataset.
+The first set, which was in the spotlight of this study, consists of quadruples composed
+of the logarithm of the linker's length, the linker's pI, the percentage
+of charged amino acids in the linker, and the linker's GRAVY index~\cite{kyte1982simple}.
+The pI and the GRAVY index roughly describe the linker's electric charge and its
+hydrophobicity, respectively.
 These values were calculated with the ExPASy's ProtParam tool~\cite{gasteiger2005protein},
-and their densities and correlation matrix across the whole dataset were computed.
-In the second set, each linker is described with 553 physicochemical and
+and their distributions across the whole dataset were computed.
+In the second set, each linker was described using the 553 physicochemical and
 biochemical properties of amino acids from the AAindex database, version
 9.2~\cite{nakai1988cluster, tomii1996analysis, kawashima1999aaindex, kawashima2000aaindex,
 kawashima2007aaindex}.
-Dimension reduction technique called \emph{UMAP}~\cite{mcinnes2018umap} was then applied
-on various normalized subsets of both sets, thus producing clusters of proteins having
-similar physicochemical attributes.
+A dimensionality reduction technique Uniform Manifold Approximation and Projection
+(UMAP)~\cite{mcinnes2018umap} was then applied to various normalized subsets of both
+sets, thus producing two-dimensional (2D) representations of the feature spaces aminable
+to a visual analysis resulting in, for example, the recognition of cluster structure in
+the data.
 
-EC and GO terms present in the \texttt{uniprot\_reference\_proteomes.dat} file were
-parsed.
-The latter is a weakly hierarchical vocabulary~\cite{ashburner2000gene}, and the hierarchy
-level of GO terms in the \texttt{uniprot\_reference\_proteomes.dat} file is not
-standardized.
+The EC and GO terms associated with proteins in the UPR.dat file were parsed.
+The former describes the enzyme specificity~\cite{webb1992enzyme}, the latter terms
+biological processes, cellular components, and molecular functions of genes and their
+products~\cite{ashburner2000gene, gene2019gene}.
+The GO is a weakly hierarchical vocabulary~\cite{ashburner2000gene}, and the hierarchy
+level of GO terms in the UPR.dat file is not standardized.
 Therefore, for each protein, parents of its terms were recursively obtained and merged
 from the \texttt{go-basic.obo}
 file\footnote{\url{http://current.geneontology.org/ontology/go-basic.obo}}, release
 2020-06-01, thus enabling cluster analysis on different GO levels.
 GO terms labeled as obsolete were excluded.
-EC and GO terms were then embedded into the UMAP dimensionality reduction, and presence
-of unique terms within clusters was examined.
-The same process was executed on density clusters as well.
-Results were visualized using the Python 3.5.2 graphics package
+The EC and GO terms were then embedded into the UMAP projections and the presence of
+unique terms within the identified clusters was examined.
+The same process was executed on the density clusters (see below) as well.
+The results were visualized using the Python graphics package
 Matplotlib~\cite{hunter2007matplotlib}, version 1.5.1.
