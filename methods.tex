@@ -1,11 +1,11 @@
-\chapwithtoc{Methods}
+\chapter{Methods}
 \label{methods}
 
 Protein sequences and MSAs of Pfam domain sequences were obtained from The European
 Bioinformatics Institute's
 FTP\footnote{\url{ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/}}.
 The archived files \texttt{Pfam-A.full} and \texttt{uniprot\_reference\_proteomes.dat}
-(UPR.dat) corresponding to Pfam's release 32.0 were downloaded; the MSAs consist of
+(URP.dat) corresponding to Pfam's release 32.0 were downloaded; the MSAs consist of
 sequences from the UniProt reference proteomes version 2018\_04.
 Protein family annotation software
 pfamannot\footnote{\url{https://github.com/hamalcij/pfamannot}} has then been implemented
@@ -52,12 +52,12 @@ sets, thus producing two-dimensional (2D) representations of the feature spaces 
 to a visual analysis resulting in, for example, the recognition of cluster structure in
 the data.
 
-The EC and GO terms associated with proteins in the UPR.dat file were parsed.
+The EC and GO terms associated with proteins in the URP.dat file were parsed.
 The former describes the enzyme specificity~\cite{webb1992enzyme}, the latter terms
 biological processes, cellular components, and molecular functions of genes and their
 products~\cite{ashburner2000gene, gene2019gene}.
 The GO is a weakly hierarchical vocabulary~\cite{ashburner2000gene}, and the hierarchy
-level of GO terms in the UPR.dat file is not standardized.
+level of GO terms in the URP.dat file is not standardized.
 Therefore, for each protein, parents of its terms were recursively obtained and merged
 from the \texttt{go-basic.obo}
 file\footnote{\url{http://current.geneontology.org/ontology/go-basic.obo}}, release
