@@ -10,49 +10,78 @@
 \else
 \centerline{\mbox{\includegraphics[width=166mm]{img/logo-cs.pdf}}}
 \fi
-\vspace{-8mm}
+%\vspace{-8mm}
 \else
-{\large\noindent\UKName\par\medskip\par\UKFaculty }
+{\bf\large\noindent\UKName\par\medskip\par\UKFaculty }
 \fi
 \vfill
 
-{\bf\Large\ThesisTypeName}
+% {
+% \centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
+% \ifEN Study programme: \else Studijní program: \fi
+% & \StudyProgramme \cr
+% \noalign{\vspace{2mm}}
+% \ifEN Branch of study: \else Studijní obor: \fi
+% & \StudyBranch \cr
+% }}}}
 
-\vfill
+\begin{longtable}[c]{ r l }
+  Study programme: & \StudyProgramme \\
+  \addlinespace[2mm]
+  Branch of study: & \StudyBranch \\
+\end{longtable}
+
+%{\bf\Large\ThesisTypeName}
+
+%\vfill
 
 \ifMFF\relax\else\includegraphics[width=70mm]{img/uklogo.pdf}
 
-\vfill\fi
+\vspace{10mm}\fi
 
-{\LARGE\ThesisAuthor}
+{\bf\Large\ThesisAuthor}
 
-\vspace{15mm}
+\vspace{10mm}
 
-{\LARGE\bfseries\ThesisTitle}
+{\Large\ThesisTitle}
 
-\vfill
+\vspace{3mm}
 
-\Department
-
-\vfill
-
-{
-\centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
-\ifEN Supervisor of the \SupervisedThesisName thesis:
-\else Vedoucí \SupervisedThesisName práce: \fi
-& \Supervisor \cr
-\noalign{\vspace{2mm}}
-\ifEN Study programme: \else Studijní program: \fi
-& \StudyProgramme \cr
-\noalign{\vspace{2mm}}
-\ifEN Study branch: \else Studijní obor: \fi
-& \StudyBranch \cr
-}}}}
+{\Large\CZThesisTitle}
 
 \vfill
+
+{\ThesisTypeName}
+
+\vspace{10mm}
+
+{Supervisor: \Supervisor}
+
+\vspace{10mm}
+
+% \Department
+%
+% \vfill
+
+% {
+% \centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
+% \ifEN Supervisor of the \SupervisedThesisName thesis:
+% \else Vedoucí \SupervisedThesisName práce: \fi
+% & \Supervisor \cr
+% \noalign{\vspace{2mm}}
+% \ifEN Study programme: \else Studijní program: \fi
+% & \StudyProgramme \cr
+% \noalign{\vspace{2mm}}
+% \ifEN Study branch: \else Studijní obor: \fi
+% & \StudyBranch \cr
+% }}}}
+
+% \vfill
 
 \ifEN Prague \else Praha \fi
 \YearSubmitted
+
+\vfill
 
 \end{center}
 
@@ -89,6 +118,19 @@ Tato práce nebyla využita k získání jiného nebo stejného titulu.
 
 \vspace{10mm}
 
+\hbox{
+  \hbox to 0.5\hsize{V Markarydu, Švédsko, 12.8.2020\hfill}
+  \hbox to 0.5\hsize{\hfill\ThesisAuthor\hfill}
+}
+
+% Podpis
+%
+% \begin{tikzpicture}[remember picture,overlay]
+%   \node[xshift=-33 mm,yshift=20mm,anchor=south east] at (current page.south east){
+%     \includegraphics[width=70mm]{img/podpis2.png}
+%   };
+%
+% \end{tikzpicture}
 
 % \ifEN
 % \hbox{\hbox to 0.5\hsize{%
@@ -97,11 +139,10 @@ Tato práce nebyla využita k získání jiného nebo stejného titulu.
 % \smallskip
 % \hbox{\hbox to 0.5\hsize{}\hbox to 0.5\hsize{\hfil Author's signature\hfil}}
 % \else
-\hbox{\hbox to 0.5\hsize{%
-V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
-\hss}\hbox to 0.5\hsize{\dotfill\quad}}
-\smallskip
-\hbox{\hbox to 0.5\hsize{}\hbox to 0.5\hsize{\hfil Podpis autora\hfil}}
+% \hbox{\hbox to 0.5\hsize{%
+% V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
+% \hss}\hbox to 0.5\hsize{\dotfill\quad}}
+% \hbox{\hbox to 0.5\hsize{}\hbox to 0.5\hsize{\hfil Podpis autora\hfil}}
 %\fi
 
 \vspace{20mm}
