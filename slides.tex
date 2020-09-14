@@ -1,0 +1,129 @@
+\documentclass{beamer}
+
+\input{metadata}
+
+\usepackage[utf8]{inputenc}
+
+\usetheme{Berlin}
+
+\title{\ThesisTitle}
+\subtitle{\ThesisTypeName}
+\author[\ThesisAuthor]{\ThesisAuthor \\ \small Supervisor: \Supervisor}
+\institute[\UKFaculty]{\UKName \\ \UKFaculty}
+\date{September 15\textsuperscript{th}, 2020}
+
+\begin{document}
+
+  \frame{\titlepage}
+
+  \begin{frame}
+    \frametitle{Overview}
+
+    \begin{itemize}
+      \item Hypothesis: General linker composition traits influence the function and
+      specificity of the adjoint domains.
+      \item Key consequence: Prediction of protein domain function based on the analysis
+      of the non-domain regions.
+      \item Method: On human two-domain proteins with one PK domain do:
+        \begin{enumerate}
+          \item acquire physicochemical attributes of the linkers and average them over
+          their sequences,
+          \item cluster the proteins by the averaged physicochemical attributes,
+          \item embed GO terms and EC numbers into the clustering.
+        \end{enumerate}
+      \item Result: No colocalization of like GO or EC terms associated with proteins with
+      different architectures was observed.
+    \end{itemize}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Protein kinase domain}
+
+    \begin{columns}
+
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Large and diverse family, involved in signal transduction.
+          \item Phosphate group transfer from a phosphate donor onto a substrate.
+          \item Bilobal structure with following conserved regions:
+          \begin{itemize}
+            \item Gly-X-Gly-X-X-Gly motif
+            \item Invariant lysine
+            \item DFG motif
+            \item APE motif
+          \end{itemize}
+        \end{itemize}
+      \end{column}
+
+      \begin{column}{0.5\textwidth}
+        \begin{center}
+          \includegraphics[width=\textwidth]{img/aurora.png}
+        \end{center}
+      \end{column}
+
+    \end{columns}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Dataset}
+
+    \begin{itemize}
+      \item 117 human two-domain proteins with one PK domain
+      \item 32 different architectures
+      \item Averaged physicochemical attributes of their inter-domain regions:
+      \begin{itemize}
+        \item logarithm of the linker sequence length
+        \item isoelectric point
+        \item percentage of charged amino acids
+        \item GRAVY index
+      \end{itemize}
+    \end{itemize}
+
+    \vspace{5mm}
+
+    2D representation of the feature space performed by UMAP.
+
+  \end{frame}
+
+  \begin{frame}[plain]
+    \begin{center}
+      \includegraphics[width=\textwidth]{img/iso_density.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}[plain]
+    \begin{center}
+      \includegraphics[width=\textwidth]{img/iso_density_ec.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}[plain]
+    \begin{center}
+      \includegraphics[width=\textwidth]{img/linker_umap_arch.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}[plain]
+    \begin{center}
+      \includegraphics[width=\textwidth]{img/linker_umap_ec.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Conclusion}
+
+    \begin{itemize}
+      \item No general influence of the linkers' composition on the overall protein
+      function observed.
+      \item Problems:
+      \begin{itemize}
+        \item 3.65625 proteins per architecture on average
+        \item GO and EC are too general and too precise, respectively
+        \item Observed linker types are determined by UMAP parametrization
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+\end{document}

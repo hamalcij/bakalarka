@@ -1,5 +1,6 @@
 NAME=thesis
 ABSTRACT=abstract
+SLIDES=slides
 REFS=refs.bib
 
 TEX=pdflatex #possibly switch to lualatex/xelatex
@@ -7,7 +8,7 @@ BIB=bibtex #possibly switch to biber (remove backend=bibtex from biblatex opts)
 
 RMF=rm -f
 
-PDFS=$(NAME).pdf $(ABSTRACT)-en.pdf $(ABSTRACT)-cz.pdf
+PDFS=$(NAME).pdf $(ABSTRACT)-en.pdf $(ABSTRACT)-cz.pdf $(SLIDES).pdf
 
 all: $(PDFS)
 
@@ -18,6 +19,9 @@ $(NAME).pdf: $(wildcard *.tex) $(REFS) $(NAME).xmpdata
 	$(TEX) $(NAME)
 
 $(ABSTRACT)-%.pdf: $(ABSTRACT)-%.tex $(ABSTRACT)-%.xmpdata metadata.tex
+	$(TEX) $<
+
+$(SLIDES).pdf: $(SLIDES).tex $(SLIDES).xmpdata metadata.tex
 	$(TEX) $<
 
 clean:
